@@ -23,6 +23,6 @@ public class WikimediaStreamConsumer {
                 .uri("/stream/recentchange")
                 .retrieve()
                 .bodyToFlux(String.class)
-                .subscribe(log::info);
+                .subscribe(producer::sendMessage);
     }
 }
